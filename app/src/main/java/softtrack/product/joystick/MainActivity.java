@@ -13,6 +13,9 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.ParcelUuid;
 import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.Button;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -40,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         findBluetoothDevice();
 
         getRemoveBluetoothData();
+
+        initializeGamePadControl();
 
     }
 
@@ -161,6 +166,63 @@ public class MainActivity extends AppCompatActivity {
         }, 0, 2000);
     }
 
-
+    public void initializeGamePadControl() {
+        Button aActionBtn = findViewById(R.id.aActionBtn);
+        Button bActionBtn = findViewById(R.id.bActionBtn);
+        Button cActionBtn = findViewById(R.id.cActionBtn);
+        Button dActionBtn = findViewById(R.id.dActionBtn);
+        Button upMovementBtn = findViewById(R.id.upMovementBtn);
+        Button downMovementBtn = findViewById(R.id.downMovementBtn);
+        Button leftMovementBtn = findViewById(R.id.leftMovementBtn);
+        Button rightMovementBtn = findViewById(R.id.rightMovementBtn);
+        aActionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // посылаем прерывание действия 1
+            }
+        });
+        bActionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // посылаем прерывание действия 2
+            }
+        });
+        cActionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // посылаем прерывание действия 3
+            }
+        });
+        dActionBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // посылаем прерывание действия 4
+            }
+        });
+        upMovementBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // посылаем прерывание движения вверх
+            }
+        });
+        downMovementBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // посылаем прерывание движения вниз
+            }
+        });
+        leftMovementBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // посылаем прерывание движения влево
+            }
+        });
+        rightMovementBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // посылаем прерывание движения вправо
+            }
+        });
+    }
 
 }
